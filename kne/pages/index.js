@@ -115,7 +115,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style jsx global>{`
           .valid-row strong {
-            font-size: 2.0em;
+            font-size: 2.5em;
             font-weight: bold;
           }
         `}</style>
@@ -317,9 +317,10 @@ export default function Home() {
                   justifyContent: 'center',
                   gap: '0.3em',
                   marginTop: '8px',
-                  marginBottom: '10px'
+                  marginBottom: '10px',
+                  overflow: 'visible'
                 }}>
-                  <span style={{ position: 'relative' }}>
+                  <span style={{ position: 'relative', overflow: 'visible' }}>
                     {role === '選手' && frameImage && (
                       <img
                         src={frameImage.src}
@@ -334,14 +335,15 @@ export default function Home() {
                           zIndex: 1,
                           pointerEvents: 'none',
                           borderRadius: '50% 50% / 70% 70%',
-                          objectFit: 'cover'
+                          objectFit: 'cover',
+                          overflow: 'visible'
                         }}
                       />
                     )}
-                    <span style={{ position: 'relative', zIndex: 2 }}>仮選手証</span>
+                    <span style={{ position: 'relative', zIndex: 2, overflow: 'visible' }}>仮選手証</span>
                   </span>
                   <span>　・　</span>
-                  <span style={{ position: 'relative' }}>
+                  <span style={{ position: 'relative', overflow: 'visible' }}>
                     {role === 'スタッフ' && frameImage && (
                       <img
                         src={frameImage.src}
@@ -356,11 +358,12 @@ export default function Home() {
                           zIndex: 1,
                           pointerEvents: 'none',
                           borderRadius: '50% 50% / 70% 70%',
-                          objectFit: 'cover'
+                          objectFit: 'cover',
+                          overflow: 'visible'
                         }}
                       />
                     )}
-                    <span style={{ position: 'relative', zIndex: 2 }}>スタッフ証</span>
+                    <span style={{ position: 'relative', zIndex: 2, overflow: 'visible' }}>スタッフ証</span>
                   </span>
                 </div>
                 
@@ -402,7 +405,7 @@ export default function Home() {
                 
                 <div style={{
                   fontSize: '1.2em',
-                  marginTop: '2px',
+                  marginTop: '10px',
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
@@ -425,7 +428,7 @@ export default function Home() {
                 <div 
                   className="valid-row"
                   style={{
-                    fontSize: '1.0em',
+                    fontSize: '1.3em',
                     marginTop: '15px',
                     textAlign: 'center'
                   }}
