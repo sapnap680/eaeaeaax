@@ -115,12 +115,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style jsx global>{`
           .valid-row strong {
-            font-size: 4.5em;
+            font-size: 80px;
             font-weight: bold;
             display: inline-block;
+            line-height: 1;
           }
           .valid-row span {
-            font-size: 0.9em;
+            font-size: 20px;
+            display: inline-block;
           }
         `}</style>
       </Head>
@@ -373,7 +375,7 @@ export default function Home() {
                 
                 <div style={{ marginTop: '12px' }}>
                   <div style={{
-                    fontSize: '1.3em',
+                    fontSize: '1.5em',
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
@@ -381,12 +383,13 @@ export default function Home() {
                     whiteSpace: 'nowrap',
                     overflow: 'visible'
                   }}>
-                    <span style={{ whiteSpace: 'nowrap' }}>氏名</span>
+                    <span style={{ whiteSpace: 'nowrap', fontSize: '1.5em' }}>氏名</span>
                     <span style={{
                       position: 'absolute',
                       left: '50%',
                       transform: 'translateX(-50%)',
-                      whiteSpace: 'nowrap'
+                      whiteSpace: 'nowrap',
+                      fontSize: '1.5em'
                     }}>{playerName || ''}</span>
                   </div>
                   <hr style={{ border: 'none', borderBottom: '2px solid #222', margin: '5px 0 0 0' }} />
@@ -394,7 +397,7 @@ export default function Home() {
                 
                 <div style={{ marginTop: '10px' }}>
                   <div style={{
-                    fontSize: '1.3em',
+                    fontSize: '1.5em',
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
@@ -404,11 +407,14 @@ export default function Home() {
                   }}>
                     <span style={{
                       position: 'absolute',
-                      left: '50%',
-                      transform: 'translateX(-50%)',
-                      whiteSpace: 'nowrap'
+                      left: '0',
+                      right: 'calc(1.5em + 10px)',
+                      whiteSpace: 'nowrap',
+                      fontSize: '1.5em',
+                      textAlign: 'right',
+                      overflow: 'visible'
                     }}>{university || ''}</span>
-                    <span style={{ marginLeft: 'auto', whiteSpace: 'nowrap' }}>大学</span>
+                    <span style={{ marginLeft: 'auto', whiteSpace: 'nowrap', fontSize: '1.5em' }}>大学</span>
                   </div>
                   <hr style={{ border: 'none', borderBottom: '2px solid #222', margin: '5px 0 0 0' }} />
                 </div>
@@ -438,7 +444,6 @@ export default function Home() {
                 <div 
                   className="valid-row"
                   style={{
-                    fontSize: '0.9em',
                     marginTop: '15px',
                     textAlign: 'center'
                   }}
