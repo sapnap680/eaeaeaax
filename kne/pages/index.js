@@ -445,10 +445,23 @@ export default function Home() {
                   className="valid-row"
                   style={{
                     marginTop: '15px',
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    fontSize: '1em'
                   }}
                 >
-                  <span dangerouslySetInnerHTML={{ __html: validText }} />
+                  {validType === '今大会のみ' ? (
+                    <>
+                      <span style={{ fontSize: '30px' }}>※</span>
+                      <strong style={{ fontSize: '100px', fontWeight: 'bold', display: 'inline-block', lineHeight: 1 }}>今大会</strong>
+                      <span style={{ fontSize: '30px' }}>のみ有効</span>
+                    </>
+                  ) : (
+                    <>
+                      <span style={{ fontSize: '30px' }}>※</span>
+                      <strong style={{ fontSize: '100px', fontWeight: 'bold', display: 'inline-block', lineHeight: 1 }}>{validDateOnly}</strong>
+                      <span style={{ fontSize: '30px' }}>のみ有効</span>
+                    </>
+                  )}
                 </div>
                 
                 <div style={{
