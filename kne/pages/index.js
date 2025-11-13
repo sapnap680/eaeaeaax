@@ -3,12 +3,12 @@ import Head from 'next/head'
 import html2canvas from 'html2canvas'
 
 export default function Home() {
-  const [tournamentNumber, setTournamentNumber] = useState('76')
+  const [tournamentNumber, setTournamentNumber] = useState('')
   const [tournamentType, setTournamentType] = useState('新人戦')
   const [playerName, setPlayerName] = useState('')
   const [university, setUniversity] = useState('')
   const [role, setRole] = useState('選手')
-  const [birthDate, setBirthDate] = useState('2000/12/11')
+  const [birthDate, setBirthDate] = useState('')
   const [photoFile, setPhotoFile] = useState(null)
   const [photoPreview, setPhotoPreview] = useState(null)
   const [validType, setValidType] = useState('今大会のみ')
@@ -105,8 +105,8 @@ export default function Home() {
 
   const birthDateObj = parseDate(birthDate)
   const validText = validType === '今大会のみ' 
-    ? '※<strong>今大会</strong>のみ有効'
-    : `※<strong>${validDateOnly}</strong>のみ有効`
+    ? '<span>※</span><strong>今大会</strong><span>のみ有効</span>'
+    : `<span>※</span><strong>${validDateOnly}</strong><span>のみ有効</span>`
 
   return (
     <>
@@ -115,8 +115,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style jsx global>{`
           .valid-row strong {
-            font-size: 3.5em;
+            font-size: 4.5em;
             font-weight: bold;
+            display: inline-block;
+          }
+          .valid-row span {
+            font-size: 0.9em;
           }
         `}</style>
       </Head>
@@ -304,7 +308,7 @@ export default function Home() {
                   whiteSpace: 'nowrap',
                   overflow: 'visible'
                 }}>
-                  第{tournamentNumber}回関東大学バスケットボール
+                  {tournamentNumber ? `第${tournamentNumber}回関東大学バスケットボール` : '第回関東大学バスケットボール'}
                 </div>
                 <div style={{ fontSize: '1.4em', fontWeight: 'bold', textAlign: 'center', marginTop: '6px' }}>
                   {tournamentType}
@@ -373,14 +377,17 @@ export default function Home() {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    position: 'relative'
+                    position: 'relative',
+                    whiteSpace: 'nowrap',
+                    overflow: 'visible'
                   }}>
-                    <span>氏名</span>
+                    <span style={{ whiteSpace: 'nowrap' }}>氏名</span>
                     <span style={{
                       position: 'absolute',
                       left: '50%',
-                      transform: 'translateX(-50%)'
-                    }}>{playerName || '氏名'}</span>
+                      transform: 'translateX(-50%)',
+                      whiteSpace: 'nowrap'
+                    }}>{playerName || ''}</span>
                   </div>
                   <hr style={{ border: 'none', borderBottom: '2px solid #222', margin: '5px 0 0 0' }} />
                 </div>
@@ -391,14 +398,17 @@ export default function Home() {
                     display: 'flex',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    position: 'relative'
+                    position: 'relative',
+                    whiteSpace: 'nowrap',
+                    overflow: 'visible'
                   }}>
                     <span style={{
                       position: 'absolute',
                       left: '50%',
-                      transform: 'translateX(-50%)'
-                    }}>{university || '大学名'}</span>
-                    <span style={{ marginLeft: 'auto' }}>大学</span>
+                      transform: 'translateX(-50%)',
+                      whiteSpace: 'nowrap'
+                    }}>{university || ''}</span>
+                    <span style={{ marginLeft: 'auto', whiteSpace: 'nowrap' }}>大学</span>
                   </div>
                   <hr style={{ border: 'none', borderBottom: '2px solid #222', margin: '5px 0 0 0' }} />
                 </div>
@@ -421,7 +431,7 @@ export default function Home() {
                     fontSize: '1.2em',
                     whiteSpace: 'nowrap'
                   }}>
-                    {birthDateObj.year}年{birthDateObj.month}月{birthDateObj.day}日
+                    {birthDate ? `${birthDateObj.year}年${birthDateObj.month}月${birthDateObj.day}日` : ''}
                   </span>
                 </div>
                 
