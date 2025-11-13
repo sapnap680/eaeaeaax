@@ -115,7 +115,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style jsx global>{`
           .valid-row strong {
-            font-size: 3.2em;
+            font-size: 3.5em;
             font-weight: bold;
           }
         `}</style>
@@ -330,8 +330,8 @@ export default function Home() {
                           left: '50%',
                           top: '50%',
                           transform: 'translate(-50%, -50%)',
-                          width: '3.5em',
-                          height: '3.5em',
+                          width: '3em',
+                          height: '3em',
                           zIndex: 1,
                           pointerEvents: 'none',
                           borderRadius: '50% 50% / 70% 70%',
@@ -353,8 +353,8 @@ export default function Home() {
                           left: '50%',
                           top: '50%',
                           transform: 'translate(-50%, -50%)',
-                          width: '3.5em',
-                          height: '3.5em',
+                          width: '3em',
+                          height: '3em',
                           zIndex: 1,
                           pointerEvents: 'none',
                           borderRadius: '50% 50% / 70% 70%',
@@ -413,7 +413,7 @@ export default function Home() {
                   whiteSpace: 'nowrap',
                   overflow: 'visible'
                 }}>
-                  <span style={{ fontSize: '1.0em', whiteSpace: 'nowrap' }}>生年月日</span>
+                  <span style={{ fontSize: '0.85em', whiteSpace: 'nowrap' }}>生年月日</span>
                   <span style={{
                     position: 'absolute',
                     left: '50%',
@@ -428,7 +428,7 @@ export default function Home() {
                 <div 
                   className="valid-row"
                   style={{
-                    fontSize: '1.3em',
+                    fontSize: '0.9em',
                     marginTop: '15px',
                     textAlign: 'center'
                   }}
