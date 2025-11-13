@@ -115,13 +115,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style jsx global>{`
           .valid-row strong {
-            font-size: 80px;
+            font-size: 10em;
             font-weight: bold;
             display: inline-block;
             line-height: 1;
           }
           .valid-row span {
-            font-size: 20px;
+            font-size: 3em;
             display: inline-block;
           }
         `}</style>
