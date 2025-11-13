@@ -13,6 +13,7 @@ export default function Home() {
   const [photoPreview, setPhotoPreview] = useState(null)
   const [validType, setValidType] = useState('今大会のみ')
   const [validDate, setValidDate] = useState('2024/7/11')
+  const [validDateOnly, setValidDateOnly] = useState('2024/7/11')
   const [loading, setLoading] = useState(false)
   const cardRef = useRef(null)
 
@@ -105,13 +106,19 @@ export default function Home() {
   const birthDateObj = parseDate(birthDate)
   const validText = validType === '今大会のみ' 
     ? '※<strong>今大会</strong>のみ有効'
-    : `※${validDate}まで有効`
+    : `※<strong>${validDateOnly}</strong>のみ有効`
 
   return (
     <>
       <Head>
         <title>カード発行システム</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style jsx global>{`
+          .valid-row strong {
+            font-size: 2.0em;
+            font-weight: bold;
+          }
+        `}</style>
       </Head>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem' }}>
         <h1 style={{ textAlign: 'center', marginBottom: '2rem' }}>カード発行システム</h1>
@@ -223,18 +230,18 @@ export default function Home() {
                   <label>
                     <input
                       type="radio"
-                      value="特定日付まで"
-                      checked={validType === '特定日付まで'}
+                      value="特定日付のみ"
+                      checked={validType === '特定日付のみ'}
                       onChange={(e) => setValidType(e.target.value)}
                     />
-                    特定日付まで
+                    特定日付のみ
                   </label>
                 </div>
-                {validType === '特定日付まで' && (
+                {validType === '特定日付のみ' && (
                   <input
                     type="text"
-                    value={validDate}
-                    onChange={(e) => setValidDate(e.target.value)}
+                    value={validDateOnly}
+                    onChange={(e) => setValidDateOnly(e.target.value)}
                     placeholder="YYYY/MM/DD"
                     style={{ width: '100%', padding: '0.5rem' }}
                   />
@@ -289,7 +296,14 @@ export default function Home() {
                 height: '100%',
                 width: 'calc(100% - 150px)'
               }}>
-                <div style={{ fontSize: '1.4em', fontWeight: 'bold', textAlign: 'center', marginTop: '8px' }}>
+                <div style={{ 
+                  fontSize: '1.4em', 
+                  fontWeight: 'bold', 
+                  textAlign: 'center', 
+                  marginTop: '8px',
+                  whiteSpace: 'nowrap',
+                  overflow: 'visible'
+                }}>
                   第{tournamentNumber}回関東大学バスケットボール
                 </div>
                 <div style={{ fontSize: '1.4em', fontWeight: 'bold', textAlign: 'center', marginTop: '6px' }}>
@@ -318,7 +332,9 @@ export default function Home() {
                           width: '6em',
                           height: '6em',
                           zIndex: 1,
-                          pointerEvents: 'none'
+                          pointerEvents: 'none',
+                          borderRadius: '50% 50% / 70% 70%',
+                          objectFit: 'cover'
                         }}
                       />
                     )}
@@ -338,7 +354,9 @@ export default function Home() {
                           width: '6em',
                           height: '6em',
                           zIndex: 1,
-                          pointerEvents: 'none'
+                          pointerEvents: 'none',
+                          borderRadius: '50% 50% / 70% 70%',
+                          objectFit: 'cover'
                         }}
                       />
                     )}
@@ -388,24 +406,30 @@ export default function Home() {
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
-                  position: 'relative'
+                  position: 'relative',
+                  whiteSpace: 'nowrap',
+                  overflow: 'visible'
                 }}>
-                  <span style={{ fontSize: '1.0em' }}>生年月日</span>
+                  <span style={{ fontSize: '1.0em', whiteSpace: 'nowrap' }}>生年月日</span>
                   <span style={{
                     position: 'absolute',
                     left: '50%',
                     transform: 'translateX(-50%)',
-                    fontSize: '1.2em'
+                    fontSize: '1.2em',
+                    whiteSpace: 'nowrap'
                   }}>
                     {birthDateObj.year}年{birthDateObj.month}月{birthDateObj.day}日
                   </span>
                 </div>
                 
-                <div style={{
-                  fontSize: '1.1em',
-                  marginTop: '15px',
-                  textAlign: 'center'
-                }}>
+                <div 
+                  className="valid-row"
+                  style={{
+                    fontSize: '1.0em',
+                    marginTop: '15px',
+                    textAlign: 'center'
+                  }}
+                >
                   <span dangerouslySetInnerHTML={{ __html: validText }} />
                 </div>
                 
@@ -427,7 +451,7 @@ export default function Home() {
                 top: '45px',
                 width: '130px',
                 height: '180px',
-                border: '2px dashed #000',
+                border: '2px solid #000',
                 backgroundColor: '#fff',
                 display: 'flex',
                 alignItems: 'center',
@@ -456,10 +480,10 @@ export default function Home() {
                   alt=""
                   style={{
                     position: 'absolute',
-                    right: '75px',
-                    top: '60px',
-                    width: '140px',
-                    height: '140px',
+                    right: '80px',
+                    top: '65px',
+                    width: '110px',
+                    height: '110px',
                     opacity: 0.9,
                     pointerEvents: 'none',
                     zIndex: 30
