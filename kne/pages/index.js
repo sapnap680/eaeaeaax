@@ -70,6 +70,16 @@ export default function Home() {
     return { year: '', month: '', day: '' }
   }
 
+  const formatDateWithoutYear = (dateStr) => {
+    const parts = dateStr.split(/[/\-]/)
+    if (parts.length >= 3) {
+      const month = parts[1].trim().replace(/^0+/, '')
+      const day = parts[2].trim().replace(/^0+/, '')
+      return `${month}/${day}`
+    }
+    return dateStr
+  }
+
   const generateCard = async () => {
     if (!playerName || !university || !birthDate) {
       alert('必須項目を入力してください')
@@ -457,7 +467,7 @@ export default function Home() {
                   ) : (
                     <>
                       <span style={{ fontSize: '2.5em' }}>※</span>
-                      <strong style={{ fontSize: '2.5em', fontWeight: 'bold', display: 'inline-block', lineHeight: 1 }}>{validDateOnly}</strong>
+                      <strong style={{ fontSize: '2.5em', fontWeight: 'bold', display: 'inline-block', lineHeight: 1 }}>{formatDateWithoutYear(validDateOnly)}</strong>
                       <span style={{ fontSize: '1.5em' }}>のみ有効</span>
                     </>
                   )}
