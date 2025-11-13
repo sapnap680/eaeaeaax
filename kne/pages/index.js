@@ -15,7 +15,24 @@ export default function Home() {
   const [validDate, setValidDate] = useState('2024/7/11')
   const [validDateOnly, setValidDateOnly] = useState('2024/7/11')
   const [loading, setLoading] = useState(false)
+  const [cardBackgroundColor, setCardBackgroundColor] = useState('#c2e8c2')
   const cardRef = useRef(null)
+
+  // 12色のパレット
+  const colorPalette = [
+    '#c2e8c2', // 現在の緑
+    '#e8c2c2', // ピンク
+    '#c2c2e8', // 青
+    '#e8e8c2', // 黄色
+    '#c2e8e8', // 水色
+    '#e8c2e8', // 紫
+    '#ffffff', // 白
+    '#f0f0f0', // ライトグレー
+    '#ffe4b5', // モカ
+    '#dda0dd', // プラム
+    '#98fb98', // ペールグリーン
+    '#f0e68c'  // カーキ
+  ]
 
   // 画像ファイルの読み込み
   const [frameImage, setFrameImage] = useState(null)
@@ -97,7 +114,7 @@ export default function Home() {
           width: 420,
           height: 272,
           scale: 2,
-          backgroundColor: '#c2e8c2'
+          backgroundColor: cardBackgroundColor
         })
         
         const link = document.createElement('a')
@@ -264,6 +281,28 @@ export default function Home() {
                 )}
               </div>
               
+              <div>
+                <label>カード背景色</label>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '0.5rem', marginTop: '0.5rem' }}>
+                  {colorPalette.map((color) => (
+                    <button
+                      key={color}
+                      type="button"
+                      onClick={() => setCardBackgroundColor(color)}
+                      style={{
+                        width: '100%',
+                        height: '40px',
+                        backgroundColor: color,
+                        border: cardBackgroundColor === color ? '3px solid #222' : '2px solid #ccc',
+                        cursor: 'pointer',
+                        borderRadius: '4px'
+                      }}
+                      title={color}
+                    />
+                  ))}
+                </div>
+              </div>
+              
               <button
                 onClick={generateCard}
                 disabled={loading}
@@ -295,7 +334,7 @@ export default function Home() {
                 border: '4px solid #222',
                 borderTop: '2px solid #222',
                 borderBottom: '2px solid #222',
-                backgroundColor: '#c2e8c2',
+                backgroundColor: cardBackgroundColor,
                 position: 'relative',
                 fontFamily: '"Meiryo", "Segoe UI", sans-serif',
                 fontSize: '0.7em',
@@ -537,6 +576,7 @@ export default function Home() {
     </>
   )
 }
+
 
 
 
