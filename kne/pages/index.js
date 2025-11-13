@@ -373,49 +373,49 @@ export default function Home() {
                   </span>
                 </div>
                 
-                <div style={{ marginTop: '12px' }}>
-                  <div style={{
-                    fontSize: '1.5em',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    position: 'relative',
-                    whiteSpace: 'nowrap',
-                    overflow: 'visible'
-                  }}>
-                    <span style={{ whiteSpace: 'nowrap', fontSize: '1.5em' }}>氏名</span>
-                    <span style={{
-                      position: 'absolute',
-                      left: '50%',
-                      transform: 'translateX(-50%)',
-                      whiteSpace: 'nowrap',
-                      fontSize: '1.5em'
-                    }}>{playerName || ''}</span>
-                  </div>
-                  <hr style={{ border: 'none', borderBottom: '2px solid #222', margin: '5px 0 0 0' }} />
-                </div>
-                
-                <div style={{ marginTop: '10px' }}>
-                  <div style={{
-                    fontSize: '1.5em',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    position: 'relative',
-                    whiteSpace: 'nowrap',
-                    overflow: 'visible'
-                  }}>
-                    <span style={{
-                      position: 'absolute',
-                      left: '0',
-                      right: 'calc(1.5em + 10px)',
-                      whiteSpace: 'nowrap',
-                      fontSize: '1.5em',
-                      textAlign: 'right',
-                      overflow: 'visible'
-                    }}>{university || ''}</span>
-                    <span style={{ marginLeft: 'auto', whiteSpace: 'nowrap', fontSize: '1.5em' }}>大学</span>
-                  </div>
+                 <div style={{ marginTop: '12px' }}>
+                   <div style={{
+                     fontSize: '1.2em',
+                     display: 'flex',
+                     justifyContent: 'space-between',
+                     alignItems: 'center',
+                     position: 'relative',
+                     whiteSpace: 'nowrap',
+                     overflow: 'visible'
+                   }}>
+                     <span style={{ whiteSpace: 'nowrap', fontSize: '1.2em' }}>氏名</span>
+                     <span style={{
+                       position: 'absolute',
+                       left: '50%',
+                       transform: 'translateX(-50%)',
+                       whiteSpace: 'nowrap',
+                       fontSize: '1.2em'
+                     }}>{playerName || ''}</span>
+                   </div>
+                   <hr style={{ border: 'none', borderBottom: '2px solid #222', margin: '5px 0 0 0' }} />
+                 </div>
+                 
+                 <div style={{ marginTop: '10px' }}>
+                   <div style={{
+                     fontSize: '1.2em',
+                     display: 'flex',
+                     justifyContent: 'space-between',
+                     alignItems: 'center',
+                     position: 'relative',
+                     whiteSpace: 'nowrap',
+                     overflow: 'visible'
+                   }}>
+                     <span style={{
+                       position: 'absolute',
+                       left: '0',
+                       right: 'calc(1.2em + 10px)',
+                       whiteSpace: 'nowrap',
+                       fontSize: '1.2em',
+                       textAlign: 'right',
+                       overflow: 'visible'
+                     }}>{university || ''}</span>
+                     <span style={{ marginLeft: 'auto', whiteSpace: 'nowrap', fontSize: '1.2em' }}>大学</span>
+                   </div>
                   <hr style={{ border: 'none', borderBottom: '2px solid #222', margin: '5px 0 0 0' }} />
                 </div>
                 
@@ -528,4 +528,6 @@ export default function Home() {
     </>
   )
 }
+
+
 

@@ -35,3 +35,7 @@ Vercelにデプロイ可能
 `public/`ディレクトリに以下を配置：
 - `e3219de4-86dd-424b-95a8-de7abc55c24b.png` - 囲い画像
 - `78904fc1-bd97-45ea-a6f7-d4237d5cd64b.png` - 印鑑
+
+## デプロイ
+
+Streamlit Cloudでデプロイ可能
