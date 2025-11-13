@@ -115,7 +115,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style jsx global>{`
           .valid-row strong {
-            font-size: 2.5em;
+            font-size: 3.2em;
             font-weight: bold;
           }
         `}</style>
@@ -330,8 +330,8 @@ export default function Home() {
                           left: '50%',
                           top: '50%',
                           transform: 'translate(-50%, -50%)',
-                          width: '6em',
-                          height: '6em',
+                          width: '3.5em',
+                          height: '3.5em',
                           zIndex: 1,
                           pointerEvents: 'none',
                           borderRadius: '50% 50% / 70% 70%',
@@ -353,8 +353,8 @@ export default function Home() {
                           left: '50%',
                           top: '50%',
                           transform: 'translate(-50%, -50%)',
-                          width: '6em',
-                          height: '6em',
+                          width: '3.5em',
+                          height: '3.5em',
                           zIndex: 1,
                           pointerEvents: 'none',
                           borderRadius: '50% 50% / 70% 70%',
@@ -405,7 +405,7 @@ export default function Home() {
                 
                 <div style={{
                   fontSize: '1.2em',
-                  marginTop: '10px',
+                  marginTop: '18px',
                   display: 'flex',
                   justifyContent: 'space-between',
                   alignItems: 'center',
