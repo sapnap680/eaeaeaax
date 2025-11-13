@@ -39,3 +39,4 @@ Vercelにデプロイ可能
 ## デプロイ
 
 Streamlit Cloudでデプロイ可能
+

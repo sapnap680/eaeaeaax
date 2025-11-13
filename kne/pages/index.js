@@ -399,7 +399,7 @@ export default function Home() {
                        left: '50%',
                        transform: 'translateX(-50%)',
                        whiteSpace: 'nowrap',
-                       fontSize: '1.0em'
+                       fontSize: (playerName && playerName.length > 12) ? '0.8em' : '1.1em'
                      }}>{playerName || ''}</span>
                    </div>
                    <hr style={{ border: 'none', borderBottom: '2px solid #222', margin: '5px 0 0 0' }} />
@@ -420,7 +420,7 @@ export default function Home() {
                        left: '50%',
                        transform: 'translateX(-50%)',
                        whiteSpace: 'nowrap',
-                       fontSize: '1.0em',
+                       fontSize: (university && university.length > 12) ? '0.8em' : '1.1em',
                        overflow: 'visible'
                      }}>{university || ''}</span>
                      <span style={{ marginLeft: 'auto', whiteSpace: 'nowrap', fontSize: '1.4em' }}>大学</span>
@@ -458,19 +458,19 @@ export default function Home() {
                     fontSize: '1em'
                   }}
                 >
-                  {validType === '今大会のみ' ? (
-                    <>
-                      <span style={{ fontSize: '2.5em' }}>※</span>
-                      <strong style={{ fontSize: '2.5em', fontWeight: 'bold', display: 'inline-block', lineHeight: 1 }}>今大会</strong>
-                      <span style={{ fontSize: '1.5em' }}>のみ有効</span>
-                    </>
-                  ) : (
-                    <>
-                      <span style={{ fontSize: '2.5em' }}>※</span>
-                      <strong style={{ fontSize: '2.5em', fontWeight: 'bold', display: 'inline-block', lineHeight: 1 }}>{formatDateWithoutYear(validDateOnly)}</strong>
-                      <span style={{ fontSize: '1.5em' }}>のみ有効</span>
-                    </>
-                  )}
+                   {validType === '今大会のみ' ? (
+                     <>
+                       <span style={{ fontSize: '2.2em' }}>※</span>
+                       <strong style={{ fontSize: '2.2em', fontWeight: 'bold', display: 'inline-block', lineHeight: 1 }}>今大会</strong>
+                       <span style={{ fontSize: '1.5em' }}>のみ有効</span>
+                     </>
+                   ) : (
+                     <>
+                       <span style={{ fontSize: '2.2em' }}>※</span>
+                       <strong style={{ fontSize: '2.2em', fontWeight: 'bold', display: 'inline-block', lineHeight: 1 }}>{formatDateWithoutYear(validDateOnly)}</strong>
+                       <span style={{ fontSize: '1.5em' }}>のみ有効</span>
+                     </>
+                   )}
                 </div>
                 
                 <div style={{
@@ -537,6 +537,10 @@ export default function Home() {
     </>
   )
 }
+
+
+
+
 
 
 
