@@ -383,13 +383,13 @@ export default function Home() {
                      whiteSpace: 'nowrap',
                      overflow: 'visible'
                    }}>
-                     <span style={{ whiteSpace: 'nowrap', fontSize: '1.2em' }}>氏名</span>
+                     <span style={{ whiteSpace: 'nowrap', fontSize: '1.4em' }}>氏名</span>
                      <span style={{
                        position: 'absolute',
                        left: '50%',
                        transform: 'translateX(-50%)',
                        whiteSpace: 'nowrap',
-                       fontSize: '1.2em'
+                       fontSize: '1.0em'
                      }}>{playerName || ''}</span>
                    </div>
                    <hr style={{ border: 'none', borderBottom: '2px solid #222', margin: '5px 0 0 0' }} />
@@ -407,14 +407,13 @@ export default function Home() {
                    }}>
                      <span style={{
                        position: 'absolute',
-                       left: '0',
-                       right: 'calc(1.2em + 10px)',
+                       left: '50%',
+                       transform: 'translateX(-50%)',
                        whiteSpace: 'nowrap',
-                       fontSize: '1.2em',
-                       textAlign: 'right',
+                       fontSize: '1.0em',
                        overflow: 'visible'
                      }}>{university || ''}</span>
-                     <span style={{ marginLeft: 'auto', whiteSpace: 'nowrap', fontSize: '1.2em' }}>大学</span>
+                     <span style={{ marginLeft: 'auto', whiteSpace: 'nowrap', fontSize: '1.4em' }}>大学</span>
                    </div>
                   <hr style={{ border: 'none', borderBottom: '2px solid #222', margin: '5px 0 0 0' }} />
                 </div>
@@ -451,14 +450,14 @@ export default function Home() {
                 >
                   {validType === '今大会のみ' ? (
                     <>
-                      <span style={{ fontSize: '1.5em' }}>※</span>
-                      <strong style={{ fontSize: '1.5em', fontWeight: 'bold', display: 'inline-block', lineHeight: 1 }}>今大会</strong>
+                      <span style={{ fontSize: '2.5em' }}>※</span>
+                      <strong style={{ fontSize: '2.5em', fontWeight: 'bold', display: 'inline-block', lineHeight: 1 }}>今大会</strong>
                       <span style={{ fontSize: '1.5em' }}>のみ有効</span>
                     </>
                   ) : (
                     <>
-                      <span style={{ fontSize: '1.5em' }}>※</span>
-                      <strong style={{ fontSize: '1.5em', fontWeight: 'bold', display: 'inline-block', lineHeight: 1 }}>{validDateOnly}</strong>
+                      <span style={{ fontSize: '2.5em' }}>※</span>
+                      <strong style={{ fontSize: '2.5em', fontWeight: 'bold', display: 'inline-block', lineHeight: 1 }}>{validDateOnly}</strong>
                       <span style={{ fontSize: '1.5em' }}>のみ有効</span>
                     </>
                   )}
@@ -528,6 +527,8 @@ export default function Home() {
     </>
   )
 }
+
+
 
 
 
